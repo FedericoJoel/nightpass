@@ -1,9 +1,35 @@
 page-welcome {
+
+  $list-background-color: transparent;
+  .white-placeholder{
+    .text-input::-moz-placeholder {
+      color: white;
+    }
+    
+    .text-input:-ms-input-placeholder {
+      color: white;
+    }
+    
+    .text-input::-webkit-input-placeholder {
+      text-indent: 0;
+      color: white;
+    }
+  }
   .splash-bg {
     position: relative;
-    background: url('../assets/img/splashbg.png') no-repeat transparent;
+    // background: url('../assets/img/splashbg.png') no-repeat transparent;
     background-size: cover;
     height: 45%;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+  }
+
+  ion-content {
+    background-image: url('/assets/img/Fondo.jpg');
+    // background: url('../assets/img/splashbg.png') no-repeat transparent;
+    background-size: cover;
+    height: 100%;
     z-index: 1;
     background-repeat: repeat-x;
     animation: animatedBackground 40s linear infinite;
@@ -21,12 +47,22 @@ page-welcome {
     text-align: center;
   }
   .splash-logo {
-    margin: auto;
     background: url('../assets/img/appicon.png') repeat transparent;
     background-size: 100%;
     width: 128px;
     height: 128px;
   }
+  .separador{
+    height: 15%;
+  }
+  .logo {
+    margin: auto auto 5% auto;
+    background: url('../assets/img/appicon.png') repeat transparent;
+    background-size: 100%;
+    width: 128px;
+    height: 128px;
+  }
+
   .splash-intro {
     font-size: 18px;
     font-weight: bold;
@@ -34,7 +70,7 @@ page-welcome {
     margin: auto;
   }
   button.login {
-    margin-top: 25px;
+    // margin-top: 25px;
     background-color: white;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
     color: #333;
@@ -42,5 +78,11 @@ page-welcome {
     &.activated {
       background-color: rgb(220, 220, 220);
     }
+  }
+  .login-fb {
+    // margin-top: 25px;
+    background-color: #3A5EFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
   }
 }
