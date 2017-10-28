@@ -14,23 +14,26 @@
         <ion-input type="password" placeholder="Contraseña" class="white-placeholder"></ion-input>
       </ion-item>
     </ion-list>
-    
     <ion-grid>
       <ion-row>
         <ion-col>
           <button margin-top ion-button block>
-            Ingresar
-          </button>
+                Ingresar
+              </button>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
-          <button margin-top ion-button block (click)="login()" class="login-fb">
-            <ion-icon name="logo-facebook" padding-right></ion-icon>
-            INGRESAR CON FACEBOOK
-          </button>
+        <ion-col col-12><button margin-top ion-button block (click)="login()" class="login-fb">
+                <ion-icon name="logo-facebook" padding-right></ion-icon>
+                INGRESAR CON FACEBOOK
+              </button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8 offset-2>
+          <p>Aun no tienes cuenta? <u>Registrar</u></p>
         </ion-col>
       </ion-row>
+
     </ion-grid>
 
 
