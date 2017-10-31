@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
+import { User } from '../../providers/providers';
+import { MainPage } from '../pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -14,7 +16,23 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) { }
+    // Our translated text strings
+  private loginErrorString: string;
+
+  account: { email: string, password: string } = {
+    email: 'test@example.com',
+    password: 'test'
+  };
+
+  constructor(public navCtrl: NavController,
+    public user: User,
+    public toastCtrl: ToastController,
+    public translateService: TranslateService) {
+
+    this.translateService.get('LOGIN_ERROR').subscribe((value) => {
+      this.loginErrorString = value;
+    })
+  }
 
   login() {
     this.navCtrl.push('LoginPage');
@@ -22,5 +40,9 @@ export class WelcomePage {
 
   signup() {
     this.navCtrl.push('SignupPage');
+  }
+
+  doLogin() {
+    this.navCtrl.push(MainPage);
   }
 }

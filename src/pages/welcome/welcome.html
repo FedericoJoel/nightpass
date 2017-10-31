@@ -4,38 +4,46 @@
   <div class="logo"></div>
 
   <div padding margin-top class="buttons">
-    <ion-list margin>
+    <form (submit)="doLogin()">
+      <ion-list margin>
 
-      <ion-item style="background-color:transparent; padding-left:0;">
-        <ion-input type="text" placeholder="Usuario" class="white-placeholder"></ion-input>
-      </ion-item>
+        <ion-item style="background-color:transparent; padding-left:0;">
+          <ion-input type="email" [(ngModel)]="account.email" placeholder="E-mail" name="email" class="white-placeholder"></ion-input>
+        </ion-item>
 
-      <ion-item style="background-color:transparent; padding-left:0; ">
-        <ion-input type="password" placeholder="Contraseña" class="white-placeholder"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <button margin-top ion-button block>
-                Ingresar
-              </button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-12><button margin-top ion-button block (click)="login()" class="login-fb">
-                <ion-icon name="logo-facebook" padding-right></ion-icon>
-                INGRESAR CON FACEBOOK
-              </button></ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-8 offset-2>
-          <p>Aun no tienes cuenta? <u>Registrar</u></p>
-        </ion-col>
-      </ion-row>
+        <ion-item style="background-color:transparent; padding-left:0; ">
+          <ion-input type="password" [(ngModel)]="account.password" name="password" placeholder="Contraseña" class="white-placeholder"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-grid>
 
-    </ion-grid>
+        <ion-row>
+          <ion-col>
+            <button margin-top ion-button block>
+              Ingresar
+            </button>
+          </ion-col>
+        </ion-row>
 
-
+        <ion-row>
+          <ion-col col-12>
+            <button margin-top ion-button block class="login-fb">
+              <ion-icon name="logo-facebook" padding-right></ion-icon>
+              INGRESAR CON FACEBOOK
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-8 offset-2>
+            <p text-center>Aun no tienes cuenta?
+              <a style="color:aliceblue">
+                <u>Registrar</u>
+              </a>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
   </div>
+
 </ion-content>
